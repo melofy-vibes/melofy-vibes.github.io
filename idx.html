@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>مهراوه گوهرشادی | نمونه کارها</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg: #0a0f1a;
+    --card: rgba(30, 41, 59, 0.6);
+    --text: #f8fafc;
+    --muted: #94a3b8;
+    --accent: #38bdf8;
+    --accent-glow: rgba(56, 189, 248, 0.2);
+    --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Vazirmatn', 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body:not(.ltr-mode) {
+    direction: rtl;
+    text-align: right;
+}
+
+body.ltr-mode {
+    direction: ltr;
+    text-align: left;
+}
+
+header, .section-title, .buttons, .badges, .contact, footer, .cert-card, .card {
+    text-align: center;
+}
+
+.card p, .card h3, .about p, .cert-card p, .cert-card h3, .contact p, footer p {
+    text-align: inherit;
+}
+
+.card a, .cert-card a {
+    display: inline-block;
+}
+
+#particles-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.floating-lights {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.light {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.4;
+    animation: floatLight 20s infinite ease-in-out;
+}
+
+.light:nth-child(1) {
+    width: 300px;
+    height: 300px;
+    background: rgba(56, 189, 248, 0.3);
+    top: 10%;
+    left: -100px;
+    animation-delay: 0s;
+}
+
+.light:nth-child(2) {
+    width: 400px;
+    height: 400px;
+    background: rgba(139, 92, 246, 0.25);
+    bottom: 10%;
+    right: -150px;
+    animation-delay: 5s;
+}
+
+.light:nth-child(3) {
+    width: 250px;
+    height: 250px;
+    background: rgba(236, 72, 153, 0.2);
+    top: 50%;
+    left: 50%;
+    animation-delay: 10s;
+}
+
+@keyframes floatLight {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(30px, -30px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+}
+
+.lang-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    background: var(--accent);
+    color: white;
+    font-weight: bold;
+    font-family: 'Vazirmatn', sans-serif;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+
+.lang-btn:hover {
+    transform: scale(1.05);
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+    width: min(1200px, 90%);
+    margin: auto;
+    padding: 20px 0;
+}
+
+.card, .about, .badge, .cert-card {
+    background: var(--card);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    text-align: center;
+    padding: 60px 0 40px;
+}
+
+.profile-image {
+    width: 220px;
+    height: 220px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--accent);
+    box-shadow: 0 0 20px var(--accent-glow);
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin: 10px 0;
+    background: linear-gradient(135deg, #fff, var(--accent));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+#typing {
+    color: var(--accent);
+    font-size: 1.3rem;
+    font-weight: 600;
+    min-height: 3rem;
+}
+
+.hero-text {
+    max-width: 700px;
+    margin: 20px auto;
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+.buttons a {
+    display: inline-block;
+    margin: 8px;
+    padding: 12px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    color: white;
+    background: rgba(51, 65, 85, 0.8);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.buttons a:hover {
+    transform: translateY(-3px);
+    background: var(--accent);
+    box-shadow: 0 5px 15px rgba(56, 189, 248, 0.3);
+}
+
+section {
+    padding: 40px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--accent);
+    margin: 10px auto 0;
+    border-radius: 3px;
+}
+
+.about {
+    padding: 30px;
+    border-radius: 24px;
+    line-height: 1.9;
+}
+
+body:not(.ltr-mode) .about {
+    text-align: justify;
+}
+
+body.ltr-mode .about {
+    text-align: left;
+}
+
+.grid, .certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(280px, 1fr));
+    gap: 25px;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.cert-card {
+    padding: 20px;
+    border-radius: 20px;
+    transition: all 0.3s;
+    text-align: center;
+    cursor: pointer;
+}
+
+.cert-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent);
+    box-shadow: 0 15px 40px rgba(56, 189, 248, 0.2);
+}
+
+.cert-image {
+    width: 100%;
+    height: 200px;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    background: #1e293b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cert-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.cert-card:hover .cert-image img {
+    transform: scale(1.05);
+}
+
+.placeholder-img {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #2d3a5e, #1e293b);
+    color: var(--accent);
+    font-size: 3rem;
+}
+
+.placeholder-img span {
+    font-size: 0.9rem;
+    margin-top: 10px;
+    color: var(--muted);
+}
+
+.cert-card h3 {
+    margin: 12px 0;
+    color: var(--accent);
+    font-size: 1.1rem;
+}
+
+.cert-card p {
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+.card {
+    padding: 24px;
+    border-radius: 24px;
+    transition: all 0.3s;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent);
+    box-shadow: 0 15px 40px rgba(56, 189, 248, 0.2);
+}
+
+.card h3 {
+    margin-bottom: 12px;
+    color: var(--accent);
+}
+
+.card p {
+    text-align: center;
+}
+
+.card a {
+    color: var(--accent);
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 15px;
+    font-weight: 500;
+}
+
+.badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+}
+
+.badge {
+    padding: 8px 20px;
+    border-radius: 40px;
+    font-weight: 500;
+    transition: all 0.3s;
+    background: rgba(51, 65, 85, 0.7);
+}
+
+.badge:hover {
+    background: var(--accent);
+    transform: scale(1.05);
+}
+
+.contact {
+    text-align: center;
+}
+
+.contact p {
+    margin: 12px 0;
+}
+
+.contact a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+
+.contact-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    color: var(--muted);
+}
+
+@media (max-width: 900px) {
+    .grid, .certificates-grid {
+        grid-template-columns: repeat(2, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .grid, .certificates-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 92%;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    .profile-image {
+        width: 160px;
+        height: 160px;
+    }
+    
+    .section-title {
+        font-size: 1.6rem;
+    }
+    
+    .grid, .certificates-grid {
+        gap: 16px;
+    }
+    
+    .card, .cert-card {
+        padding: 18px;
+    }
+    
+    .lang-btn {
+        top: 10px;
+        right: 10px;
+        padding: 6px 14px;
+        font-size: 0.9rem;
+    }
+    
+    .buttons a {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+    
+    .cert-image {
+        height: 160px;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 10px;
+}
+</style>
+</head>
+<body>
+
+<canvas id="particles-canvas"></canvas>
+<div class="floating-lights">
+    <div class="light"></div>
+    <div class="light"></div>
+    <div class="light"></div>
+</div>
+
+<button class="lang-btn" data-lang-toggle>English</button>
+
+<div class="container">
+
+<header>
+    <div class="profile-image">
+        <img src="assets//profile.png" alt="Mehraveh Goharshadi" onerror="this.src='https://via.placeholder.com/220/38bdf8/ffffff?text=MG'">
+    </div>
+    <h1 data-i18n="name">مهراوه گوهرشادی</h1>
+    <div id="typing"></div>
+    <p class="hero-text" data-i18n="heroText"></p>
+    <div class="buttons">
+        <a href="assets//resume.pdf" target="_blank" data-i18n="resumeBtn">📄 رزومه</a>
+        <a href="https://github.com/melofy-vibes" target="_blank" data-i18n="githubBtn">🤖 گیت‌هاب</a>
+    </div>
+</header>
+
+<section>
+    <h2 class="section-title" data-i18n="aboutTitle">درباره من</h2>
+    <div class="about" data-i18n="aboutText"></div>
+</section>
+
+<section>
+    <h2 class="section-title" data-i18n="projectTitle">پروژه‌های شاخص</h2>
+    <div class="grid" id="projectsGrid"></div>
+</section>
+
+<section>
+    <h2 class="section-title" data-i18n="certTitle">🎓 گواهینامه‌ها</h2>
+    <div class="certificates-grid" id="certificatesGrid"></div>
+</section>
+
+<section>
+    <h2 class="section-title" data-i18n="skillsTitle">🛠 مهارت‌های فنی</h2>
+    <div class="grid" id="skillsGrid"></div>
+</section>
+
+<section class="contact">
+    <h2 class="section-title" data-i18n="contactTitle">ارتباط با من</h2>
+    <div class="contact-icons">
+        <p>📧 <a href="mailto:goharshadimehraveh@gmail.com">goharshadimehraveh@gmail.com</a></p>
+        <p>📱 <a href="https://t.me/melofy_vibes" target="_blank" data-i18n="telegramLink">Telegram: @melofy_vibes</a></p>
+        <p>🤖 <a href="https://github.com/melofy-vibes" data-i18n="githubContactLink">github.com/melofy-vibes</a></p>
+    </div>
+</section>
+
+<footer data-i18n="footerText">ساخته شده با ❤️ توسط مهراوه گوهرشادی</footer>
+
+</div>
+
+<div id="imageModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:1000; justify-content:center; align-items:center; cursor:pointer;" onclick="closeModal()">
+    <div style="position:relative; max-width:90%; max-height:90%;">
+        <img id="modalImage" src="" alt="Certificate" style="width:100%; height:auto; max-height:90vh; border-radius:16px; box-shadow:0 0 50px rgba(56,189,248,0.3);">
+        <div style="position:absolute; top:-40px; right:0; color:white; font-size:30px; cursor:pointer;" onclick="closeModal()">&times;</div>
+        <div id="modalCaption" style="position:absolute; bottom:-40px; left:0; right:0; text-align:center; color:white; font-size:1rem;"></div>
+    </div>
+</div>
+
+<script>
+// ==================== DATA OBJECTS ====================
+const translations = {
+    fa: {
+        name: "مهراوه گوهرشادی",
+        aboutTitle: "درباره من",
+        projectTitle: "پروژه‌های شاخص",
+        certTitle: "🎓 گواهینامه‌ها",
+        skillsTitle: "🛠 مهارت‌های فنی",
+        contactTitle: "ارتباط با من",
+        heroText: "",
+        aboutText: "فارغ‌التحصیل زبان و ادبیات انگلیسی که مسیر حرفه‌ای خود را به سمت علم داده تغییر داده است. دارای تجربه عملی در یادگیری ماشین، یادگیری عمیق، پردازش زبان طبیعی و بینایی ماشین. علاقه‌مند به ساخت راهکارهای هوشمند مبتنی بر داده و حل مسائل واقعی جهان. هنوز در مسیر ابتدایی شغلی‌ام قرار دارم ولی بسیار مشتاق یادگیری و ساختن روابط کاری قوی با افراد متخصص هستم.",
+        resumeBtn: "📄 رزومه",
+        githubBtn: "🤖 گیت‌هاب",
+        telegramLink: "Telegram: @melofy_vibes",
+        githubContactLink: "github.com/melofy-vibes",
+        footerText: "ساخته شده با ❤️ توسط مهراوه گوهرشادی",
+        viewProject: " مشاهده پروژه ←",
+        typingRoles: ["علم داده", "یادگیری ماشین", "بینایی ماشین", "پردازش زبان طبیعی"]
+    },
+    en: {
+        name: "Mehraveh Goharshadi",
+        aboutTitle: "About Me",
+        projectTitle: "Featured Projects",
+        certTitle: "🎓 Certificates",
+        skillsTitle: "🛠 Tech Skills",
+        contactTitle: "Contact",
+        heroText: "",
+        aboutText: "An English Literature graduate who has transitioned into the field of Data Science. I have hands-on experience in Machine Learning, Deep Learning, Natural Language Processing, and Computer Vision. I am passionate about building intelligent, data-driven solutions to solve real-world problems. While I am at an early stage in my career, I bring a relentless curiosity and a strong desire to collaborate with and learn from industry experts.",
+        resumeBtn: "📄 Resume",
+        githubBtn: "🤖 GitHub",
+        telegramLink: "Telegram: @melofy_vibes",
+        githubContactLink: "github.com/melofy-vibes",
+        footerText: "Built with ❤️ by Mehraveh Goharshadi",
+        viewProject: "View Repository →",
+        typingRoles: ["Data Science", "Machine Learning", "Computer Vision", "Natural Language Processing"]
+    }
+};
+
+// Projects Data
+const projectsData = [
+    { 
+        icon: "🍳", 
+        faTitle: "دل آشپز", 
+        enTitle: "Delashpaz",
+        faDesc: "اپلیکیشن دسکتاپ مدیریت دستورهای آشپزی توسعه‌یافته با Python، Flet و SQLite.",
+        enDesc: "Recipe management desktop application built with Python, Flet and SQLite.",
+        link: "https://github.com/melofy-vibes/Delashpaz"
+    },
+    { 
+        icon: "🚔", 
+        faTitle: "تحلیل نرخ جرایم در آمریکا", 
+        enTitle: "USA Crime Analysis",
+        faDesc: "تحلیل اکتشافی و مصورسازی داده‌های جرم با هدف بررسی تأثیر عوامل اجتماعی و اقتصادی بر نرخ جرم در ایالت‌های آمریکا.",
+        enDesc: "Exploratory data analysis and statistical investigation of socioeconomic factors influencing crime rates across U.S. states.",
+        link: "https://github.com/melofy-vibes/USA-Crime-Analysis"
+    },
+    { 
+        icon: "🧍", 
+        faTitle: "سیستم هوشمند تشخیص وضعیت بدنی", 
+        enTitle: "Real-Time Pose Detection System",
+        faDesc: "تشخیص لحظه‌ای نشستن و ایستادن با YOLOv8، Mediapipe Pose و Opencv.",
+        enDesc: "Real-time sitting and standing detection using YOLOv8, MediaPipe Pose and OpenCV.",
+        link: "https://github.com/melofy-vibes/Pose-Detection"
+    },
+    { 
+        icon: "🎬", 
+        faTitle: "سیستم هوشمند پیشنهاد فیلم مبتنی بر شباهت معنایی", 
+        enTitle: "Semantic Movie Recommender",
+        faDesc: "سامانه پیشنهاد فیلم با بهره‌گیری از پردازش زبان طبیعی و تحلیل شباهت معنایی برای ارائه پیشنهادهای دقیق‌تر و شخصی‌سازی‌شده.",
+        enDesc: "Movie recommendation using semantic similarity and NLP.",
+        link: "https://github.com/melofy-vibes/Semantic-Movie-Recommender"
+    },
+    { 
+        icon: "📷", 
+        faTitle: "امتیازدهی جذابیت اینستاگرام", 
+        enTitle: "Instagram Attractiveness Scorer",
+        faDesc: "اپلیکیشن دسکتاپ مبتنی بر هوش مصنوعی برای ارزیابی جذابیت عکس‌ها و ویدئوهای اینستاگرام با بهره‌گیری از بینایی ماشین، YOLOv8 و بهبود خودکار تصاویر.",
+        enDesc: "AI-powered desktop application for analyzing Instagram photo & video attractiveness using Computer Vision, YOLOv8, and automated photo enhancement.",
+        link: "https://github.com/melofy-vibes/Instagram-Attractiveness-Scorer"
+    },
+    { 
+        icon: "🛒", 
+        faTitle: "تحلیل احساسات نظرات کاربران دیجی‌کالا", 
+        enTitle: "Digikala Comments Sentiment Analysis",
+        faDesc: "سامانه تحلیل احساسات فارسی مبتنی بر یادگیری عمیق برای دسته‌بندی بیش از ۱۵۰ هزار نظر کاربران دیجی‌کالا.",
+        enDesc: "End-to-end Persian sentiment analysis pipeline on 150K Digikala reviews using NLP preprocessing and Bidirectional LSTM networks.",
+        link: "https://github.com/melofy-vibes/digikala_sentiment_analysis"
+    }
+];
+
+// Skills Data
+const skillsData = [
+    { faTitle: "زبان برنامه نویسی", enTitle: "Programming Language", faDesc: "Python", enDesc: "Python" },
+    { faTitle: "تحلیل داده", enTitle: "Data Analysis", faDesc: "Pandas, NumPy, Matplotlib", enDesc: "Pandas, NumPy, Matplotlib" },
+    { faTitle: "یادگیری ماشین", enTitle: "Machine Learning", faDesc: "Scikit-Learn", enDesc: "Scikit-Learn" },
+    { faTitle: "یادگیری عمیق", enTitle: "Deep Learning", faDesc: "TensorFlow, PyTorch", enDesc: "TensorFlow, PyTorch" },
+    { faTitle: "بینایی ماشین", enTitle: "Computer Vision", faDesc: "OpenCV, YOLOv8, MediaPipe", enDesc: "OpenCV, YOLOv8, MediaPipe" },
+    { faTitle: "پردازش زبان طبیعی", enTitle: "NLP", faDesc: "fastText, Langchain, Transformers", enDesc: "fastText, Langchain, Transformers" }
+];
+
+// Certificates Data
+const certificatesData = [
+    { imgSrc: "assets//Algorithm-certificate.jpg", faTitle: "گواهینامه الگوریتم", enTitle: "Algorithm Certificate", faDesc: "مبانی الگوریتم‌ها و ساختارهای داده", enDesc: "Algorithms and Data Structures Fundamentals", icon: "📊" },
+    { imgSrc: "assets//Python-certificate.jpg", faTitle: "گواهینامه پایتون", enTitle: "Python Certificate", faDesc: "برنامه‌نویسی پیشرفته پایتون", enDesc: "Advanced Python Programming", icon: "🐍" },
+    { imgSrc: "assets//Data-Analysis-certificate.jpg", faTitle: "گواهینامه تحلیل داده", enTitle: "Data Analysis Certificate", faDesc: "تحلیل و مصورسازی داده با پایتون", enDesc: "Data Analysis and Visualization with Python", icon: "📈" },
+    { imgSrc: "assets//Machine-learning-certificate.jpg", faTitle: "گواهینامه یادگیری ماشین", enTitle: "Machine Learning Certificate", faDesc: "مبانی و الگوریتم‌های یادگیری ماشین", enDesc: "Machine Learning Fundamentals and Algorithms", icon: "🤖" },
+    { imgSrc: "assets//Computer-Vision-certificate.jpg", faTitle: "گواهینامه بینایی ماشین", enTitle: "Computer Vision Certificate", faDesc: "پردازش تصویر و بینایی کامپیوتری", enDesc: "Image Processing and Computer Vision", icon: "👁️" },
+    { imgSrc: "assets//Deep-learning-certificate.jpg", faTitle: "گواهینامه یادگیری عمیق", enTitle: "Deep Learning Certificate", faDesc: "شبکه‌های عصبی و یادگیری عمیق", enDesc: "Neural Networks and Deep Learning", icon: "🧠" }
+];
+
+// ==================== RENDER FUNCTIONS ====================
+let currentLang = 'fa';
+
+function renderProjects() {
+    const container = document.getElementById('projectsGrid');
+    if (!container) return;
+    
+    container.innerHTML = projectsData.map(project => {
+        const title = currentLang === 'fa' ? project.faTitle : project.enTitle;
+        const desc = currentLang === 'fa' ? project.faDesc : project.enDesc;
+        const viewText = currentLang === 'fa' ? translations.fa.viewProject : translations.en.viewProject;
+        return `
+            <div class="card">
+                <h3>${project.icon} ${title}</h3>
+                <p>${desc}</p>
+                <a href="${project.link}" target="_blank" class="project-link">${viewText}</a>
+            </div>
+        `;
+    }).join('');
+}
+
+function renderSkills() {
+    const container = document.getElementById('skillsGrid');
+    if (!container) return;
+    
+    container.innerHTML = skillsData.map(skill => {
+        const title = currentLang === 'fa' ? skill.faTitle : skill.enTitle;
+        const desc = currentLang === 'fa' ? skill.faDesc : skill.enDesc;
+        return `
+            <div class="card">
+                <h3>${title}</h3>
+                <p>${desc}</p>
+            </div>
+        `;
+    }).join('');
+}
+
+function renderCertificates() {
+    const container = document.getElementById('certificatesGrid');
+    if (!container) return;
+    
+    container.innerHTML = certificatesData.map((cert, index) => {
+        const title = currentLang === 'fa' ? cert.faTitle : cert.enTitle;
+        const desc = currentLang === 'fa' ? cert.faDesc : cert.enDesc;
+        const caption = title;
+        
+        return `
+            <div class="cert-card" data-cert-index="${index}" onclick="openModal('${cert.imgSrc}', '${caption.replace(/'/g, "\\'")}')">
+                <div class="cert-image">
+                    <img src="${cert.imgSrc}" alt="${title}" onerror="this.parentElement.innerHTML='<div class=\\'placeholder-img\\'><div>${cert.icon}</div><span>${title}</span></div>'">
+                </div>
+                <h3>${title}</h3>
+                <p>${desc}</p>
+            </div>
+        `;
+    }).join('');
+}
+
+function updateTextContent() {
+    const t = translations[currentLang];
+    const elements = document.querySelectorAll('[data-i18n]');
+    elements.forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (t[key] !== undefined) {
+            if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                el.placeholder = t[key];
+            } else {
+                el.innerHTML = t[key];
+            }
+        }
+    });
+}
+
+function updateLanguage() {
+    const body = document.body;
+    const langBtn = document.querySelector('[data-lang-toggle]');
+    
+    if (currentLang === 'fa') {
+        body.classList.remove('ltr-mode');
+        body.setAttribute('dir', 'rtl');
+        if (langBtn) langBtn.textContent = 'English';
+    } else {
+        body.classList.add('ltr-mode');
+        body.setAttribute('dir', 'ltr');
+        if (langBtn) langBtn.textContent = 'فارسی';
+    }
+    
+    updateTextContent();
+    renderProjects();
+    renderSkills();
+    renderCertificates();
+    
+    // Reset and restart typing animation with new roles
+    if (typingTimeoutId) clearTimeout(typingTimeoutId);
+    if (typingIntervalId) clearInterval(typingIntervalId);
+    roleIndex = 0;
+    charIndex = 0;
+    isDeleting = false;
+    if (typingElement) typingElement.textContent = '';
+    startTypingAnimation();
+}
+
+// ==================== TYPING ANIMATION ====================
+let typingElement = document.getElementById("typing");
+let roles = [...translations.fa.typingRoles];
+let roleIndex = 0, charIndex = 0;
+let isDeleting = false;
+let typingTimeoutId = null;
+let typingIntervalId = null;
+
+function typeEffect() {
+    if (!typingElement) return;
+    
+    const currentRole = roles[roleIndex];
+    if (isDeleting) {
+        typingElement.textContent = currentRole.substring(0, charIndex - 1);
+        charIndex--;
+        if (charIndex === 0) {
+            isDeleting = false;
+            roleIndex = (roleIndex + 1) % roles.length;
+            typingTimeoutId = setTimeout(typeEffect, 500);
+            return;
+        }
+    } else {
+        typingElement.textContent = currentRole.substring(0, charIndex + 1);
+        charIndex++;
+        if (charIndex === currentRole.length) {
+            isDeleting = true;
+            typingTimeoutId = setTimeout(typeEffect, 2000);
+            return;
+        }
+    }
+    typingTimeoutId = setTimeout(typeEffect, isDeleting ? 60 : 100);
+}
+
+function startTypingAnimation() {
+    if (typingTimeoutId) clearTimeout(typingTimeoutId);
+    roles = currentLang === 'fa' ? [...translations.fa.typingRoles] : [...translations.en.typingRoles];
+    roleIndex = 0;
+    charIndex = 0;
+    isDeleting = false;
+    if (typingElement) typingElement.textContent = '';
+    typeEffect();
+}
+
+// ==================== PARTICLE BACKGROUND ====================
+const canvas = document.getElementById('particles-canvas');
+let ctx2d = canvas ? canvas.getContext('2d') : null;
+let particles = [];
+let animationId = null;
+
+function resizeCanvas() {
+    if (!canvas) return;
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+
+class Particle {
+    constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 3 + 1;
+        this.speedX = (Math.random() - 0.5) * 0.5;
+        this.speedY = (Math.random() - 0.5) * 0.5;
+        this.color = `rgba(56, 189, 248, ${Math.random() * 0.5 + 0.2})`;
+    }
+    
+    update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        
+        if (this.x < 0) this.x = canvas.width;
+        if (this.x > canvas.width) this.x = 0;
+        if (this.y < 0) this.y = canvas.height;
+        if (this.y > canvas.height) this.y = 0;
+    }
+    
+    draw() {
+        if (!ctx2d) return;
+        ctx2d.beginPath();
+        ctx2d.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx2d.fillStyle = this.color;
+        ctx2d.fill();
+    }
+}
+
+function initParticles() {
+    if (!canvas) return;
+    particles = [];
+    const particleCount = Math.min(100, Math.floor(window.innerWidth * window.innerHeight / 15000));
+    for (let i = 0; i < particleCount; i++) {
+        particles.push(new Particle());
+    }
+}
+
+function animateParticles() {
+    if (!ctx2d || !canvas) return;
+    ctx2d.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach(particle => {
+        particle.update();
+        particle.draw();
+    });
+    animationId = requestAnimationFrame(animateParticles);
+}
+
+function initParticleSystem() {
+    if (!canvas) return;
+    ctx2d = canvas.getContext('2d');
+    resizeCanvas();
+    initParticles();
+    animateParticles();
+}
+
+// ==================== MODAL FUNCTIONS ====================
+function openModal(imgSrc, caption) {
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    const modalCaption = document.getElementById('modalCaption');
+    if (modal && modalImg && modalCaption) {
+        modal.style.display = 'flex';
+        modalImg.src = imgSrc;
+        modalCaption.textContent = caption;
+    }
+}
+
+function closeModal() {
+    const modal = document.getElementById('imageModal');
+    if (modal) modal.style.display = 'none';
+}
+
+// ==================== LANGUAGE TOGGLE ====================
+function toggleLanguage() {
+    currentLang = currentLang === 'fa' ? 'en' : 'fa';
+    updateLanguage();
+}
+
+// ==================== INITIALIZATION ====================
+document.addEventListener('DOMContentLoaded', () => {
+    initParticleSystem();
+    window.addEventListener('resize', () => {
+        resizeCanvas();
+        initParticles();
+    });
+    
+    // Set up language toggle button
+    const langBtn = document.querySelector('[data-lang-toggle]');
+    if (langBtn) {
+        langBtn.onclick = toggleLanguage;
+    }
+    
+    // Initial render
+    currentLang = 'fa';
+    updateTextContent();
+    renderProjects();
+    renderSkills();
+    renderCertificates();
+    startTypingAnimation();
+});
+</script>
+
+</body>
+</html>
