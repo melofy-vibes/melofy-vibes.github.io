@@ -345,6 +345,21 @@
       align-items: center;
       gap: 12px;
     }
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      justify-content: center;
+      margin-top: 10px;
+    }
+    .project-tag {
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--accent);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
     @media (max-width: 900px) {
       .grid, .certificates-grid {
         grid-template-columns: repeat(2, minmax(280px, 1fr));
@@ -503,23 +518,16 @@
     }
   };
 
-  // Projects Data
+  // Projects Data — Delashpaz removed, Scientific Claim Verifier added
   const projectsData = [
-    {
-      icon: "🍳",
-      faTitle: "دل آشپز",
-      enTitle: "Delashpaz",
-      faDesc: "اپلیکیشن دسکتاپ مدیریت دستورهای آشپزی توسعه‌یافته با Python، Flet و SQLite.",
-      enDesc: "Recipe management desktop application built with Python, Flet and SQLite.",
-      link: "https://github.com/melofy-vibes/Delashpaz"
-    },
     {
       icon: "🚔",
       faTitle: "تحلیل نرخ جرایم در آمریکا",
       enTitle: "USA Crime Analysis",
       faDesc: "تحلیل اکتشافی و مصورسازی داده‌های جرم با هدف بررسی تأثیر عوامل اجتماعی و اقتصادی بر نرخ جرم در ایالت‌های آمریکا.",
       enDesc: "Exploratory data analysis and statistical investigation of socioeconomic factors influencing crime rates across U.S. states.",
-      link: "https://github.com/melofy-vibes/USA-Crime-Analysis"
+      link: "https://github.com/melofy-vibes/USA-Crime-Analysis",
+      tags: ["Python", "Pandas", "Data Visualization", "EDA"]
     },
     {
       icon: "🧍",
@@ -527,7 +535,8 @@
       enTitle: "Real-Time Pose Detection System",
       faDesc: "تشخیص لحظه‌ای نشستن و ایستادن با YOLOv8، Mediapipe Pose و Opencv.",
       enDesc: "Real-time sitting and standing detection using YOLOv8, MediaPipe Pose and OpenCV.",
-      link: "https://github.com/melofy-vibes/Pose-Detection"
+      link: "https://github.com/melofy-vibes/Pose-Detection",
+      tags: ["Computer Vision", "YOLOv8", "MediaPipe", "OpenCV"]
     },
     {
       icon: "🎬",
@@ -535,7 +544,8 @@
       enTitle: "Semantic Movie Recommender",
       faDesc: "سامانه پیشنهاد فیلم با بهره‌گیری از پردازش زبان طبیعی و تحلیل شباهت معنایی برای ارائه پیشنهادهای دقیق‌تر و شخصی‌سازی‌شده.",
       enDesc: "Movie recommendation using semantic similarity and NLP.",
-      link: "https://github.com/melofy-vibes/Semantic-Movie-Recommender"
+      link: "https://github.com/melofy-vibes/Semantic-Movie-Recommender",
+      tags: ["NLP", "Semantic Search", "Recommendation System"]
     },
     {
       icon: "📷",
@@ -543,7 +553,8 @@
       enTitle: "Instagram Attractiveness Scorer",
       faDesc: "اپلیکیشن دسکتاپ مبتنی بر هوش مصنوعی برای ارزیابی جذابیت عکس‌ها و ویدئوهای اینستاگرام با بهره‌گیری از بینایی ماشین، YOLOv8 و بهبود خودکار تصاویر.",
       enDesc: "AI-powered desktop application for analyzing Instagram photo & video attractiveness using Computer Vision, YOLOv8, and automated photo enhancement.",
-      link: "https://github.com/melofy-vibes/Instagram-Attractiveness-Scorer"
+      link: "https://github.com/melofy-vibes/Instagram-Attractiveness-Scorer",
+      tags: ["Computer Vision", "YOLOv8", "PyQt5", "Desktop App"]
     },
     {
       icon: "🛒",
@@ -551,7 +562,17 @@
       enTitle: "Digikala Comments Sentiment Analysis",
       faDesc: "سامانه تحلیل احساسات فارسی مبتنی بر یادگیری عمیق برای دسته‌بندی بیش از ۱۵۰ هزار نظر کاربران دیجی‌کالا.",
       enDesc: "End-to-end Persian sentiment analysis pipeline on 150K Digikala reviews using NLP preprocessing and Bidirectional LSTM networks.",
-      link: "https://github.com/melofy-vibes/digikala_sentiment_analysis"
+      link: "https://github.com/melofy-vibes/digikala_sentiment_analysis",
+      tags: ["NLP", "Persian NLP", "Deep Learning", "LSTM", "Sentiment Analysis"]
+    },
+    {
+      icon: "🔬",
+      faTitle: "بررسی‌کننده ادعاهای علمی",
+      enTitle: "Scientific Claim Verifier",
+      faDesc: "سامانه هوشمند تحلیل ادعاهای علمی با بهره‌گیری از ۶ پایگاه داده علمی، پردازش زبان طبیعی، FAISS و DeBERTa. پشتیبانی از زبان فارسی و انگلیسی با ترجمه خودکار.",
+      enDesc: "CPU-friendly scientific claim verification system using 6 databases, NLP, FAISS semantic search, and DeBERTa NLI. Bilingual English/Persian support with auto-translation.",
+      link: "https://github.com/melofy-vibes/scientific-claim-verifier",
+      tags: ["NLP", "FAISS", "DeBERTa", "PyQt5", "Persian NLP", "NLI", "arXiv", "PubMed"]
     }
   ];
 
@@ -562,7 +583,7 @@
     { faTitle: "یادگیری ماشین", enTitle: "Machine Learning", faDesc: "Scikit-Learn", enDesc: "Scikit-Learn" },
     { faTitle: "یادگیری عمیق", enTitle: "Deep Learning", faDesc: "TensorFlow, PyTorch", enDesc: "TensorFlow, PyTorch" },
     { faTitle: "بینایی ماشین", enTitle: "Computer Vision", faDesc: "OpenCV, YOLOv8, MediaPipe", enDesc: "OpenCV, YOLOv8, MediaPipe" },
-    { faTitle: "پردازش زبان طبیعی", enTitle: "NLP", faDesc: "fastText, Langchain, Transformers", enDesc: "fastText, Langchain, Transformers" }
+    { faTitle: "پردازش زبان طبیعی", enTitle: "NLP", faDesc: "spaCy, FAISS, Transformers, Langchain", enDesc: "spaCy, FAISS, Transformers, Langchain" }
   ];
 
   // Certificates Data
@@ -585,10 +606,13 @@
       const title = currentLang === 'fa' ? project.faTitle : project.enTitle;
       const desc = currentLang === 'fa' ? project.faDesc : project.enDesc;
       const viewText = currentLang === 'fa' ? translations.fa.viewProject : translations.en.viewProject;
+      const tags = project.tags || [];
+      const tagsHTML = tags.map(tag => `<span class="project-tag">${tag}</span>`).join('');
       return `
         <div class="card">
           <h3>${project.icon} ${title}</h3>
           <p>${desc}</p>
+          ${tagsHTML ? `<div class="project-tags">${tagsHTML}</div>` : ''}
           <a href="${project.link}" target="_blank" class="project-link">${viewText}</a>
         </div>
       `;
@@ -801,7 +825,6 @@
 
   // ==================== INITIALIZATION ====================
   document.addEventListener('DOMContentLoaded', () => {
-    // Set default language to English
     currentLang = 'en';
     document.body.classList.remove('rtl-mode');
     document.body.setAttribute('dir', 'ltr');
@@ -824,4 +847,4 @@
   });
 </script>
 </body>
-    </html>
+</html>
